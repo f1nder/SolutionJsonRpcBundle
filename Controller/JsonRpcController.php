@@ -18,9 +18,6 @@ class JsonRpcController
     {
         $this->handler = $handler;
         $this->smd = $smd;
-
-        $smd->setDescription('test');
-        $smd->getService('api.remove')->setName('asd');
     }
 
     public function execute(Request $request)

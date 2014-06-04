@@ -2,3 +2,4 @@ bin/phpspec
 vendor
 composer.phar
 atlassian-ide-plugin.xml
+.idea

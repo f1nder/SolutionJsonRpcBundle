@@ -15,7 +15,15 @@
     },
     "require-dev": {
         "phpspec/phpspec": "dev-develop",
-        "phpspec/prophecy": "dev-master"
+        "phpspec/prophecy": "dev-master",
+        "symfony/validator": "*",
+        "symfony/form": "*",
+        "symfony/class-loader": "*",
+        "symfony/yaml": "*",
+        "symfony/browser-kit": "*",
+        "symfony/security-bundle": "*",
+        "symfony/twig-bundle": "*",
+        "sensio/framework-extra-bundle": "*"
     },
     "autoload": {
         "psr-0": {
