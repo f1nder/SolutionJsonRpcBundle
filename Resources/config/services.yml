@@ -1,0 +1,31 @@
+parameters:
+   solution_json_rpc.server.class: Zend\Json\Server\Server
+   solution_json_rpc.smd.class: Zend\Json\Server\Smd
+   solution_json_rpc.finder.class: Symfony\Component\Finder\Finder
+   solution_json_rpc.api_finder.class: Solution\JsonRpcBundle\Finder\ApiFinder
+   solution_json_rpc.request_handler.class: Solution\JsonRpcBundle\Server\RequestHandler
+   solution_json_rpc.controller.class: Solution\JsonRpcBundle\Controller\JsonRpcController
+
+services:
+    solution_json_rpc.server:
+        class: %solution_json_rpc.server.class%
+
+    solution_json_rpc.server.smd:
+        class: %solution_json_rpc.smd.class%
+        factory_service: solution_json_rpc.server
+        factory_method: getServiceMap
+
+    solution_json_rpc.request_handler:
+        class: %solution_json_rpc.request_handler.class%
+        arguments: [@solution_json_rpc.server]
+
+    solution_json_rpc.finder:
+        class: %solution_json_rpc.finder.class%
+
+    solution_json_rpc.api_finder:
+        class: %solution_json_rpc.api_finder.class%
+        arguments: [@solution_json_rpc.finder, @annotation_reader]
+
+    solution_json_rpc.controller:
+        class: %solution_json_rpc.controller.class%
+        arguments: [@solution_json_rpc.request_handler, @solution_json_rpc.server.smd]
