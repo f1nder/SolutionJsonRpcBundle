@@ -25,4 +25,5 @@ class SolutionJsonRpcBundle extends Bundle
         array_unshift($passes, new AnnotationConfigurationPass($this->kernel));
         $config->setBeforeOptimizationPasses($passes);
     }
+
 }
