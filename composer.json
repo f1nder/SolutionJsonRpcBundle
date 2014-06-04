@@ -1,0 +1,30 @@
+{
+    "name": "solution/json-rpc-bundle",
+    "description": "Wrapper for Zend2 Json Rpc Server",
+    "minimum-stability": "dev",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Moroz Aleksandr",
+            "email": "netstroix@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zend-json": "2.3.0",
+        "zendframework/zend-server": "2.3.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "dev-develop",
+        "phpspec/prophecy": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Solution\\JsonRpcBundle": ""
+        }
+    },
+    "target-dir": "Solution/JsonRpcBundle",
+    "config": {
+        "bin-dir": "bin"
+    }
+}
+
