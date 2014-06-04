@@ -41,7 +41,7 @@ namespace spec\Solution\JsonRpcBundle\DependencyInjection\Compiler {
 
         function it_should_scan_configured_bundles(KernelInterface $kernel, ContainerBuilder $cb, Reader $reader, ApiFinder $finder, Server $server, Definition $definition)
         {
-            $annotation = new JsonRpcApi;
+            $annotation = new JsonRpcApi(['service' => 'test.service']);
             $annotation->service = 'test_service';
             $annotation->namespace = 'testnamespace';
 

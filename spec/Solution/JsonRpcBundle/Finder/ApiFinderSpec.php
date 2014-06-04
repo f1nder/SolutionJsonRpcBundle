@@ -25,7 +25,7 @@ namespace spec\Solution\JsonRpcBundle\Finder {
 
         function it_should_find_all_api_classes(Finder $finder, Reader $reader)
         {
-            $apiAnnotation = new JsonRpcApi;
+            $apiAnnotation = new JsonRpcApi(['service'=> 'test.service']);
 
             $reader
                 ->getClassAnnotation(Argument::which('getName', 'TestNamespace1\TestClass1'), 'Solution\JsonRpcBundle\Annotation\JsonRpcApi')
