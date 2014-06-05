@@ -50,6 +50,8 @@ class AnnotationConfigurationPass implements CompilerPassInterface
             $refApiClass = new \ReflectionClass($classname);
             $methods = $refApiClass->getMethods(\ReflectionMethod::IS_PUBLIC);
 
+            var_dump($annotation->namespace); die;
+
             foreach ($methods as $method) {
                 if ($methodAnnotation = $reader->getMethodAnnotation($method, 'Solution\JsonRpcBundle\Annotation\JsonRpcMethod')) {
 
