@@ -22,7 +22,7 @@ class JsonRpcApi
             throw new \InvalidArgumentException('You must define a "service" attribute for each JsonRpcApi annotation.');
         }
 
-        if(isset($values['desc'])) {
+        if(isset($values['namespace'])) {
             $this->namespace = $values['namespace'];
         }
 
